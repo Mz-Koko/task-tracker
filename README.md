@@ -52,3 +52,9 @@ Delete
 ```
 ```
 Drag and Drop
+
+```
+###
+Usage
+```
+Login to the app using a valid email address and a password comprising 3 letters and 3 numbers
