@@ -1,0 +1,9 @@
+
+<div
+  class="flex flex-col w-64 bg-gray-100 rounded-lg pb-[170px] h-full">
+    <div class="flex flex-row justify-between rounded-t-lg" [ngClass]="color">
+        <div class="flex text-xl font-medium text-blue-950 justify-center mx-2 my-2">{{status}}</div>
+        <button *ngIf="showAdd" (click)="addTaskModal()" class="flex border border-gray-200 bg-gray-100 px-2 mx-4 my-3 rounded text-center justify-center text-gray-900 text-base font-normal">Add</button>
+    </div>
+    <app-task cdkDrag *ngFor="let task of tasks" [task]="task" />
+</div>

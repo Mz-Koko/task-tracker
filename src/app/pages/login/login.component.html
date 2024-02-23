@@ -1,0 +1,97 @@
+<div class="flex flex-row items-center">
+  <div class="flex-1 px-4 bg-[#031434]">
+    <div class="h-screen flex bg-contain bg-no-repeat bg-center bg-login-bg">
+    </div>
+  </div>
+  <div class="flex-1">
+    <div class="flex flex-col m-auto w-[457px] h-[564px] border border-[#a4a7b74d] bg-white  py-[36px] px-[66px]">
+      <div class="text-[#434854] text-2xl font-semibold leading-8">Login</div>
+      <div class="text-[#737373] pt-2 pb-16 text-base font-normal leading-6">Kindly enter your details to log in</div>
+      <form class="flex flex-col">
+        <div class="flex flex-col">
+          <div class="mb-8">
+            <label class="relative cursor-pointer">
+              <input
+                      required
+                      type="text"
+                      placeholder="Email"
+                      [(ngModel)]="email"
+                      name="email"
+                      (input)="handleEmailChange($event)"
+                      class="w-[335px] h-[48px] px-6 py-2 text-base border-[#A4A7B7] border rounded-lg border-opacity-50"
+
+              />
+              <ng-container *ngIf="!isEmailValid">
+                <span class="text-red-500 text-xs mt-1">Invalid email</span>
+              </ng-container>
+              <span
+                      [ngClass]="{
+            'text-blue-500': isEmailValid,
+            'text-sm -translate-y-5': !isEmailValid
+          }">
+
+        </span>
+            </label>
+          </div>
+
+          <div class="mb-8">
+            <label class="relative cursor-pointer">
+              <input
+                      required
+                      type="password"
+                      placeholder="Password"
+                      [(ngModel)]="password"
+                      name="password"
+                      (input)="handlePasswordChange($event)"
+                      class="w-[335px] h-[48px] px-6 py-2 text-base border-[#A4A7B7] border rounded-lg border-opacity-50"
+                      maxlength="6"
+              />
+              <ng-container *ngIf="!isPasswordValid">
+                <span class="text-red-500 text-xs mt-1">Invalid password</span>
+              </ng-container>
+              <span
+                      [ngClass]="{
+            'text-blue-500': isPasswordValid,
+            'text-sm -translate-y-5': !isPasswordValid
+          }">
+
+        </span>
+            </label>
+          </div>
+        </div>
+
+        <button (click)="handleLogin()" [disabled]="!isFormValid()" class="bg-[#0A74DC] rounded-md w-[335px] h-[48px] justify-center items-center text-white text-center text-base leading-6 font-medium mb-6">
+          Log in
+        </button>
+      </form>
+      <a href="#" (click)="handleForgotPasswordClick($event)" class="text-[#0A74DC] text-sm font-normal leading-4 underline text-center mb-24">
+        Forgot your password?
+      </a>
+      <div class="text-[#303B54] text-xs font-normal leading-5 underline text-center">
+        Privacy Policy
+        <span class="text-[#B0B9C8] text-xs font-normal leading-5 no-underline"> and </span>
+        Terms of services
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--<div class="flex flex-row items-center justify-between h-screen">-->
+<!--  <div class="flex-1 bg-[#031434]">-->
+<!--    <div class="flex bg-contain bg-no-repeat bg-center bg-[url('~/assets/login-bg.jpg')] mx-[100px]">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="flex-1">-->
+<!--    <div class="flex flex-col w-[457px] h-[564px] border border-[#a4a7b74d] bg-white mx-[100px] py-[36px] px-[66px]">-->
+<!--      <div class="text-[#434854] text-2xl font-semibold leading-8">Login</div>-->
+<!--      <div class="text-[#737373] pt-2 pb-16 text-base font-normal leading-6">Kindly enter your details to log in </div>-->
+<!--      <form class="flex flex-col">-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -1,0 +1,28 @@
+<div class="flex justify-center items-center mb-8">
+  <label class="relative cursor-pointer">
+    <input
+      required
+      [type]="type"
+      [attr.maxLength]="max"
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      (input)="handleChange($event)"
+      [ngClass]="{
+        'border-[#A4A7B7] border-2': isValid,
+        'border-red-500 border-2': !isValid
+      }"
+      class="w-[335px] h-[48px] px-6 py-2 text-lg rounded-lg border-opacity-50 outline-none duration-200 peer focus:border-blue-500 placeholder-gray-300 placeholder-opacity-0 bg-inherit"
+    />
+    <ng-container *ngIf="!isValid">
+      <span class="text-red-500 text-xs mt-1">Invalid {{ placeholder.toLowerCase() }}</span>
+    </ng-container>
+    <span class="text-lg font-normal leading-6 text-[#B0B9C8] absolute left-0 top-2 mx-6 px-2
+      pointer-events-none transition duration-200 bg-white ml-2"
+          [ngClass]="{
+        'peer-focus:text-blue-500 peer-focus:-translate-y-5': isValid,
+        'peer-valid:text-sm peer-valid:-translate-y-5': !isValid
+      }">
+      {{ placeholder }}
+    </span>
+  </label>
+</div>
