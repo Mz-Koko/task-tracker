@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "open": [
+      {
+        "id": 1,
+        "title": "Open Task 1",
+        "description": "Description for Open Task 1",
+        "dueDate": "2024-03-01",
+        "reference":  "PB-0056"},
+      { "id": 2,
+        "title": "Open Task 2",
+        "description": "Description for Open Task 2",
+        "dueDate": "2024-03-05",
+        "reference":  "PB-6096" }
+    ],
+    "pending": [
+      { "id": 3,
+        "title": "Pending Task 1",
+        "description": "Description for Pending Task 1",
+        "dueDate": "2024-03-10",
+        "reference":  "PB-9048" }
+    ],
+    "inProgress": [
+      { "id": 4,
+        "title": "In Progress Task 1",
+        "description": "Description for In Progress Task 1",
+        "dueDate": "2024-03-15",
+        "reference":  "PB-7096" },
+      { "id": 5,
+        "title": "In Progress Task 2",
+        "description": "Description for In Progress Task 2",
+        "dueDate": "2024-03-20",
+        "reference":  "PB-2022" }
+    ],
+    "completed": [
+      { "id": 6,
+        "title": "Completed Task 1",
+        "description": "Description for Completed Task 1",
+        "dueDate": "2024-03-25",
+        "reference":  "PB-1006" },
+      { "id": 7,
+        "title": "Completed Task 2",
+        "description": "Description for Completed Task 2",
+        "dueDate": "2024-03-30",
+        "reference":  "PB-6734" }
+    ]
+  }
+}

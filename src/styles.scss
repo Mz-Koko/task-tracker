@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+input[type="text"]:focus ~ .input-text {
+  @apply text-blue-500 transform -translate-y-9 -translate-x-4;
+}
+
+@layer base {
+  html, body {
+    min-height: 100vh; /* Minimum height of the viewport */
+    height: auto; /* Auto height */
+  }
+}
+
+.blur-background {
+ @apply blur-sm bg-transparent backdrop-blur-sm
+}
+
+.overlay-panel {
+  @apply bg-gray-100 border-gray-600 rounded-lg shadow
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
