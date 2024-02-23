@@ -9,7 +9,7 @@ import {TaskModel, TaskState} from "../models/task.model";
     providedIn: 'root',
 })
 export class TaskService {
-  private tasks: BehaviorSubject<TaskState> = new BehaviorSubject<TaskState>(null);
+  private static tasks: BehaviorSubject<TaskState> = new BehaviorSubject<TaskState>(null);
   private currentTask: TaskModel;
 
   constructor(private mockApiService: MockApiService, private http: HttpClient) {
@@ -17,16 +17,18 @@ export class TaskService {
   }
 
   getTasks() {
-    if(this.tasks.value) {
-      return this.tasks.asObservable()
+    if(TaskService.tasks.value) {
+      return TaskService.tasks.asObservable()
     }
-    return this.mockApiService.getTasks();
+    return this.mockApiService.getTasks().subscribe(response => {
+      return TaskService.tasks.next(response.tasks);
+    });
   }
 
   private loadTasks() {
     this.mockApiService.getTasks().subscribe(
       (response) => {
-        this.tasks.next(response.tasks);
+        TaskService.tasks.next(response.tasks);
       },
       (error) => {
         console.error('Error fetching tasks:', error);
@@ -34,16 +36,19 @@ export class TaskService {
     );
   }
 
-  deleteTask(task: TaskModel) {
-    if (!this.tasks.value) {
+  deleteTask(task: TaskModel, status) {
+    if (!TaskService.tasks.value) {
       return;
     }
-    const currentTasks = { ...this.tasks.value };
-    for (const status of Object.keys(currentTasks)) {
-      currentTasks[status] = currentTasks[status].filter(t => t.id !== task.id);
-    }
 
-    this.tasks.next(currentTasks);
+    let currentTasks = { ...TaskService.tasks.value };
+    currentTasks["status"] = currentTasks["status"].filter(t => t.id !== task.id);
+
+    // for (const status of Object.keys(currentTasks)) {
+    //   currentTasks[status] = currentTasks[status].filter(t => t.id !== task.id);
+    // }
+
+    TaskService.tasks.next(currentTasks);
   }
 
   getCurrentTask() {

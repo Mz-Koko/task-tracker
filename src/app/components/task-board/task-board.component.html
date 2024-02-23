@@ -6,10 +6,10 @@
     </div>
     <div class="flex flex-row gap-24 justify-between pt-4">
 
-      <app-task-state status="Open" color="bg-[#FC89AC]" [tasks]="tasks.open" [showAdd]="true" />
-      <app-task-state status="Pending" color="bg-[#FBEC5D]" [tasks]="tasks.pending" />
-      <app-task-state status="In Progress" color="bg-[#3DED97]" [tasks]="tasks.inProgress" />
-      <app-task-state status="Completed" color="bg-[#82EEFD]" [tasks]="tasks.completed" />
+      <app-task-state status="Open" key="open" color="bg-[#FC89AC]" [tasks]="tasks.open" [showAdd]="true" />
+      <app-task-state status="Pending" key="pending" color="bg-[#FBEC5D]" [tasks]="tasks.pending" />
+      <app-task-state status="In Progress" key="inProgress" color="bg-[#3DED97]" [tasks]="tasks.inProgress" />
+      <app-task-state status="Completed" key="completed" color="bg-[#82EEFD]" [tasks]="tasks.completed" />
 
     </div>
   </div>

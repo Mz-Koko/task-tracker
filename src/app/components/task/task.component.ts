@@ -42,6 +42,9 @@ export class TaskComponent {
     @Input()
     task: TaskModel;
 
+    @Input()
+    key: string;
+
   deleteTaskModal() {
     let dialogRef = this.dialog.open(WarningModalComponent, {
       backdropClass: 'blur-background',
@@ -52,8 +55,11 @@ export class TaskComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result === 'confirm') {
         console.log(this.task.id, 'id', this.task);
-        this.taskService.deleteTask(this.task);
+        this.taskService.deleteTask(this.task, this.key);
       }
     });
   }
+
+
+
 }

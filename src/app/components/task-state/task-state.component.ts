@@ -40,6 +40,9 @@ export class TaskStateComponent {
     color: string;
 
     @Input()
+    key: string;
+
+    @Input()
     showAdd: boolean = false;
 
     @Input()
