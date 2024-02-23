@@ -1,10 +1,11 @@
-<div class="w-full flex">
+<div class="lg:w-full flex">
 
-  <div class="flex flex-col border bg-[#1f7f90] mx-5 pt-5 pb-24 w-full rounded items-center">
-    <div class="text-white text-4xl font-semibold py-3">
+  <div class="flex flex-col border bg-[#1f7f90] mx-5 pt-5 pb-24 lg:w-full rounded items-center">
+    <div class="flex text-center text-white text-4xl font-semibold py-3 ">
       Task Board
     </div>
-    <div class="flex flex-row gap-24 justify-between pt-4">
+
+    <div class="flex flex-row gap-24 lg:justify-between justify-center flex-wrap pt-4">
       <app-task-state status="Open" key="open" color="bg-[#FC89AC]" [tasks]="tasks.open" [showAdd]="true" />
       <app-task-state status="Pending" key="pending" color="bg-[#FBEC5D]" [tasks]="tasks.pending" />
       <app-task-state status="In Progress" key="inProgress" color="bg-[#3DED97]" [tasks]="tasks.inProgress" />

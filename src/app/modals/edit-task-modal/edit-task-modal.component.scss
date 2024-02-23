@@ -1,5 +1,5 @@
 .modal-input {
-  @apply flex w-[335px] px-6 py-2 text-base border-[#A4A7B7] border rounded-md border-opacity-50 mb-4
+  @apply flex lg:w-[335px] w-[250px] px-6 py-2 text-base border-[#A4A7B7] border rounded-md border-opacity-50 mb-4
 }
 .add-button {
   @apply bg-[#0A74DC] rounded-md w-[100px] h-[48px] justify-center items-center text-white text-center text-sm leading-6 font-medium mb-6
