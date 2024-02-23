@@ -14,6 +14,9 @@ export class TaskBoardComponent {
   columns = ['Open', 'Pending', 'In Progress', 'Completed'];
 
   constructor(private taskService: TaskService, public dialog: MatDialog) {
+    taskService.reloadTasks.subscribe(_ => {
+      this.loadTasks();
+    })
   }
 
   private loadTasks() {
