@@ -1,27 +1,54 @@
-# TaskTracker
+# Task Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+This is a task tracker app that has a kanban board for task management.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Mock API](#mock-api)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Usage](#usage)
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Make sure you have the following installed before running the project:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-## Running unit tests
+### Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/mz-koko/task-tracker.git
+```
+cd task-tracker
+```
+```
+### MockApi
+Run  json-server --watch db.json to start json server
+```
+```
+### Technologies Used
+Tailwind CSS
+Angular Material Drag and Drop
+```
+```
+### Features
+```
+Edit
+```
+```
+Add
+```
+```
+Delete
+```
+```
+Drag and Drop
